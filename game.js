@@ -91,5 +91,7 @@ function animatePress(currentColor) {
 }
 
 
-
+$(document).on("load", function() {
+    $(".txt").focus();
+});
 
