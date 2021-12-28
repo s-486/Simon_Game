@@ -7,12 +7,14 @@ var started = false;
 
 var level = 0;
 
-$(window).on("keypress", function(event) {
+$(".start").on("click", function(event) {
 
     if(!started) {
         $("#level-title").text("level " + level);
         nextSequence();
         started = true;
+        $(".start").addClass("started");
+        $(".start").text("started");
     }
 
 });
@@ -49,12 +51,15 @@ function checkAnswer(currentLevel) {
         var wrong_2 = new Audio("sounds/wrong.mp3")
         wrong_2.play();
 
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over, Press start button to Restart");
 
         started = false;
         level = 0;
         userClickedPattern = [];
         gamePattern = [];
+        $(".start").removeClass("started");
+        $(".start").text("start");
+        $("#level-title").css("font-size", "2rem")
     }
 }
 

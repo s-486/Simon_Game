@@ -56,3 +56,13 @@ body {
 .txt{
   overflow: hidden;
 }
+
+.start {
+  padding: 5px 20px;
+  font-size: 1rem;
+}
+
+.started {
+  background-color: green;
+  color: #FEF2BF;
+}
